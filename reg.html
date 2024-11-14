@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Status</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #c3e8ff, #a1c4fd, #e0c3fc);
+            background-size: 400% 400%;
+            animation: gradientBackground 15s ease infinite;
+        }
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .status-btn {
+            padding: 14px 28px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffffff;
+            background: linear-gradient(45deg, #ff6b6b, #f0e68c);
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .status-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, #f0e68c, #ff6b6b);
+        }
+
+        .registration-message {
+            display: none;
+            font-size: 26px;
+            font-weight: bold;
+            color: #e74c3c;
+            text-align: center;
+            margin-top: 40px;
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px 30px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: slideIn 0.8s forwards, colorPulse 3s infinite, shadowPulse 2s infinite;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes colorPulse {
+            0%, 100% { color: #e74c3c; }
+            50% { color: #f39c12; }
+        }
+
+        @keyframes shadowPulse {
+            0%, 100% { box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); }
+            50% { box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4); }
+        }
+
+        .exclamation {
+            display: inline-block;
+            animation: bounce 1.5s infinite;
+            color: #e74c3c;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .line {
+            height: 4px;
+            width: 100px;
+            background: linear-gradient(45deg, #e74c3c, #f39c12);
+            border-radius: 2px;
+            margin: 15px auto;
+            animation: stretchLine 1s ease-out 0.8s forwards;
+        }
+
+        @keyframes stretchLine {
+            from { width: 0; }
+            to { width: 100px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div style="text-align: center;">
+        <button class="status-btn" onclick="showRegistrationMessage()">Check Registration Status</button>
+        <div id="registrationMessage" class="registration-message">
+            <span class="exclamation">⚠️</span> Registration Not Started Yet <span class="exclamation">⚠️</span>
+            <div class="line"></div>
+        </div>
+    </div>
+
+    <script>
+        function showRegistrationMessage() {
+            document.getElementById("registrationMessage").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
