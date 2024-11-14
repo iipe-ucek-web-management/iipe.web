@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Notice</title>
+    <style>
+        .maintenance-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .maintenance-message {
+            display: none;
+            margin-top: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            text-align: center;
+            animation: blink 1s linear infinite, pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+  
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <button class="maintenance-btn" onclick="showMaintenanceMessage()">Check Site Status</button>
+
+
+    <div id="maintenanceMessage" class="maintenance-message">⚠️ Site Under Maintenance ⚠️</div>
+
+    <script>
+        function showMaintenanceMessage() {
+
+            document.getElementById("maintenanceMessage").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
