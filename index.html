@@ -8,26 +8,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
   
+       :root {
+            --primary-color: #003b82;
+            --accent-color: #ffdd33;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-light: #f0f4f7;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background-color: var(--bg-light);
+            line-height: 1.6;
         }
 
         .title-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #003b82;
-            padding: 10px;
-            color: white;
-            height: auto;
+            background-color: var(--primary-color);
+            padding: 10px 20px;
+            color: var(--text-light);
+            height: 60px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .title-bar h1 {
             margin: 0;
-            font-size: 20px;
+            font-size: 18px;
             flex: 1;
             text-align: center;
         }
@@ -40,45 +55,42 @@
         .menu-btn {
             font-size: 30px;
             cursor: pointer;
-            color: white;
-            position: absolute;
-            top: 10px;
-            left: 10px;
+            color: var(--text-light);
+            margin-right: 20px;
         }
 
         .nav-menu {
             height: 100%;
             width: 0;
             position: fixed;
-            z-index: 1;
+            z-index: 1001;
             top: 0;
             left: 0;
-            background-color: #003b82;
+            background-color: var(--primary-color);
             overflow-x: hidden;
-            transition: 0.5s;
+            transition: 0.3s;
             padding-top: 60px;
         }
 
         .nav-menu a {
             padding: 15px 25px;
             text-decoration: none;
-            font-size: 22px;
-            color: white;
+            font-size: 18px;
+            color: var(--text-light);
             display: block;
             transition: 0.3s;
         }
 
         .nav-menu a:hover {
-            background-color: #ffdd33;
-            color: #003b82;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
         }
 
         .nav-menu .closebtn {
             position: absolute;
             top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
+            right: 20px;
+            font-size: 30px;
         }
 
         .explanation-section {
