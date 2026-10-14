@@ -1,385 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IIPE JNTUK Student Chapter</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f4f7; 
-        }
-
-        .title-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #003b82;
-            padding: 10px 20px;
-            color: white;
-            height: 60px;
-            animation: fadeInDown;
-        }
-
-        .title-bar h1 {
-            margin: 0;
-            font-size: 18px;
-            flex: 1;
-            text-align: center;
-        }
-
-        .title-bar img {
-            height: 50px; 
-            width: auto; 
-        }
-
-        .menu-btn {
-            font-size: 30px;
-            cursor: pointer;
-            color: white;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        .nav-menu {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #003b82;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-        .nav-menu a {
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 20px;
-            color: white;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .nav-menu a:hover {
-            background-color: #ffdd33;
-            color: #003b82;
-        }
-
-        .nav-menu .closebtn {
-            position: absolute;
-            top: 0;
-            right: 20px;
-            font-size: 30px;
-            margin-left: 50px;
-        }
-
-        .about-us-section {
-            padding: 50px;
-            text-align: center;
-        }
-
-        .about-us-section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #003b82;
-            animation: fadeInUp;
-        }
-
-        .about-us-section p {
-            font-size: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-        .mission-vision-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px; 
-            padding: 40px;
-        }
-
-        .mission-vision-box {
-            flex: 1;
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            max-width: 500px; 
-            animation: fadeInUp;
-        }
-
-        .mission-vision-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-
-        .mission-vision-box h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-
-        .mission-vision-box p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        .team-section {
-            background-color: #eaeaea;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .team-section h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            animation: fadeInUp;
-        }
-
-        .team-member {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: #fff;
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            max-width: 600px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            animation: fadeInUp;
-        }
-
-        .team-member h3 {
-            margin: 10px 0;
-            font-size: 22px;
-        }
-
-        .team-member p {
-            font-size: 18px;
-        }
-
-        .button {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            background-color: #ffdd33;
-            color: #333;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-            margin-top: 20px;
-            animation: pulse;
-            --animate-repeat: 2;
-        }
-
-        .button:hover {
-            background-color: #003b82;
-            color: #fff;
-        }
-
-        .footer {
-            background-color: #003b82;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            animation: fadeInUp;
-        }
-
-        .footer a {
-            color: #ffdd33;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media screen and (max-width: 768px) {
-            .title-bar {
-                flex-direction: column;
-                height: auto;
-                padding: 10px;
-            }
-
-            .title-bar h1 {
-                font-size: 16px;
-            }
-
-            .mission-vision-container {
-                flex-direction: column;
-                gap: 10px; 
-            }
-
-            .mission-vision-box {
-                width: 90%;
-            }
-
-            .event-box {
-                width: 90%;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | IIPE JNTUK Student Chapter</title>
+<style>
+:root{--p:#003b82;--a:#ffdd33;--bg:#f0f4f7;--td:#333}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;margin:0;background:var(--bg);color:var(--td);line-height:1.6;padding-top:60px;overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh}
+a:focus-visible,button:focus-visible,.menu-btn:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+#bar{position:fixed;top:0;left:0;height:4px;width:0;background:var(--a);z-index:1100}
+.title-bar{display:flex;justify-content:space-between;align-items:center;background:var(--p);padding:5px 15px;color:#fff;height:60px;position:fixed;top:0;left:0;width:100%;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.25);animation:down .8s both}
+.title-bar h1{margin:0;font-size:15px;flex:1;text-align:center;padding:0 8px}
+.title-bar img{height:46px;width:auto;transition:transform .4s}
+.title-bar img:hover{transform:rotate(-6deg) scale(1.1)}
+.long{display:none}
+.menu-btn{font-size:30px;cursor:pointer;margin-right:12px;transition:transform .3s,color .3s;background:none;border:0;color:#fff;padding:0}
+.menu-btn:hover{color:var(--a);transform:rotate(90deg)}
+.nav-menu{height:100%;width:0;position:fixed;z-index:1200;top:0;left:0;background:var(--p);overflow-x:hidden;transition:.4s;padding-top:60px;box-shadow:4px 0 12px rgba(0,0,0,.3)}
+.nav-menu a{padding:15px 25px;text-decoration:none;font-size:18px;color:#fff;display:block;white-space:nowrap;transition:.3s;border-left:4px solid transparent}
+.nav-menu a:hover,.nav-menu a.on{background:var(--a);color:var(--p);border-left-color:#fff}
+.nav-menu .closebtn{position:absolute;top:0;right:10px;font-size:32px;padding:10px 15px;width:auto;background:none;color:#fff}
+.hero{position:relative;overflow:hidden;color:#fff;text-align:center;padding:80px 20px 70px;background:repeating-linear-gradient(0deg,transparent 0 39px,rgba(255,255,255,.07) 39px 40px),repeating-linear-gradient(90deg,transparent 0 39px,rgba(255,255,255,.07) 39px 40px),linear-gradient(135deg,#002a5e,var(--p) 70%,#0a5bb8)}
+.hero.small{padding:60px 20px 55px}
+.hero::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:6px;background:repeating-linear-gradient(45deg,var(--a) 0 14px,var(--p) 14px 28px)}
+.hero>*:not(.gear){position:relative;z-index:1}
+.hero h2{font-size:clamp(26px,5vw,46px);margin:0 0 18px;text-shadow:2px 2px 6px rgba(0,0,0,.5);animation:up 1s both}
+.hero p{font-size:clamp(16px,2.2vw,21px);max-width:800px;margin:0 auto 28px;animation:up 1s .25s both}
+.hero .button{animation:up 1s .5s both}
+.hero a.ext{color:var(--a);font-weight:bold;text-decoration:none;border-bottom:2px solid var(--a);transition:.3s}
+.hero a.ext:hover{background:var(--a);color:var(--p)}
+.gear{position:absolute;color:rgba(255,221,51,.16);animation:spin 40s linear infinite;z-index:0}
+.g1{width:260px;left:-70px;top:-60px}
+.g2{width:190px;right:-40px;bottom:-50px;color:rgba(255,255,255,.12);animation-direction:reverse;animation-duration:30s}
+.g3{width:90px;right:17%;top:18px;animation-duration:20s}
+.section{padding:50px 20px;text-align:center}
+.section h2,.membership h2{color:var(--p);font-size:28px;margin:0 0 28px}
+.section>h2{display:inline-block}
+.section>h2::after{content:"";display:block;height:4px;background:var(--a);border-radius:2px;margin:8px auto 0;animation:grow 1s .4s both}
+.section.alt{background:#fff}
+.section p{max-width:850px;margin:0 auto 16px;font-size:18px}
+.section p a,.contact-details a{color:var(--p);font-weight:bold;text-decoration:none;border-bottom:2px solid var(--a);transition:.3s}
+.section p a:hover,.contact-details a:hover{background:var(--a)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+.button{padding:12px 26px;border:2px solid var(--a);border-radius:5px;background:var(--a);color:var(--p);font-size:16px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block;margin:8px;transition:.3s;position:relative;overflow:hidden}
+.button::before{content:"";position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg)}
+.button:hover::before{left:130%;transition:.7s}
+.button:hover{background:var(--p);color:#fff;border-color:var(--p);transform:translateY(-3px);box-shadow:0 6px 14px rgba(0,59,130,.3)}
+.club-button{background:var(--p);color:#fff;border-color:var(--p)}
+.club-button:hover{background:var(--a);color:var(--p);border-color:var(--a)}
+.club-images{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-bottom:40px}
+.club-images>div{width:100%;max-width:320px;background:#fff;padding:15px;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,.12);border-bottom:5px solid var(--a)}
+.club-images img{width:100%;height:auto;border-radius:10px;transition:transform .4s}
+.club-images>div:hover img{transform:scale(1.06) rotate(1deg)}
+.club-images p{font-weight:bold;color:var(--p);margin:12px 0 0;font-size:20px}
+.membership{background:var(--p);padding:30px 20px;border-radius:15px;max-width:600px;margin:0 auto}
+.membership h2{color:#fff;margin-bottom:10px}
+.slideshow-container{position:relative;max-width:1000px;margin:auto;overflow:hidden;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+.mySlides{display:none;width:100%}
+.mySlides img{width:100%;height:auto;display:block}
+.fade{animation:fade 1.5s}
+.prev,.next{cursor:pointer;position:absolute;top:50%;padding:16px;margin-top:-26px;color:#fff;font-size:24px;transition:.4s;user-select:none;background:rgba(0,0,0,.5);text-decoration:none}
+.prev{left:0;border-radius:0 4px 4px 0}
+.next{right:0;border-radius:4px 0 0 4px}
+.prev:hover,.next:hover{background:var(--p)}
+.dots{margin-top:14px}
+.dot{cursor:pointer;height:14px;width:14px;margin:0 5px;background:#bbb;border-radius:50%;display:inline-block;transition:.4s}
+.dot.active,.dot:hover{background:var(--p);transform:scale(1.3)}
+.stay{background:var(--p);color:#fff;padding:40px 20px;text-align:center}
+.stay h3{font-size:24px;margin:0 0 20px}
+.stay a{color:#fff;margin:0 10px;width:64px;height:64px;border:2px solid #fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:26px;transition:.3s}
+.stay a:hover{background:var(--a);color:var(--p);border-color:var(--a);transform:translateY(-6px) rotate(360deg)}
+.contact-section{display:flex;flex-direction:column;align-items:center;gap:25px;background:#f4f4f4;padding:40px 20px}
+.contact-details{text-align:center}
+.contact-details h3{font-size:26px;margin:0 0 15px;color:var(--p)}
+.contact-section iframe{border:0;width:100%;height:300px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.mv{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;padding:0 20px 50px}
+.mv>div{flex:1 1 300px;max-width:500px;background:#fff;border-radius:10px;padding:25px;box-shadow:0 4px 10px rgba(0,0,0,.12);border-top:5px solid var(--a);text-align:left}
+.mv h2{color:var(--p);margin:0 0 12px}
+.mv ul{margin:0;padding:0;list-style:none}
+.mv li{padding-left:28px;position:relative;margin-bottom:10px}
+.mv li::before{content:"\2699";position:absolute;left:0;color:var(--p);animation:spin 6s linear infinite}
+.mv>div:hover,.card:hover{transform:translateY(-8px);box-shadow:0 12px 24px rgba(0,59,130,.25)}
+.mv>div{transition:transform .3s,box-shadow .3s}
+.team{padding:50px 20px;text-align:center}
+.team.dark{background:#e6ebf0}
+.team .sub{max-width:700px;margin:-10px auto 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;max-width:1100px;margin:0 auto}
+.card{background:#fff;border-radius:12px;padding:24px 16px;box-shadow:0 3px 8px rgba(0,0,0,.12);border-top:4px solid var(--a)}
+.card.in{transition:transform .3s,box-shadow .3s}
+.card i{display:flex;width:68px;height:68px;border-radius:50%;background:var(--p);color:var(--a);font:bold 22px Arial;font-style:normal;align-items:center;justify-content:center;margin:0 auto 12px;border:3px solid var(--a);transition:transform .6s}
+.card:hover i{transform:rotateY(360deg)}
+.card h3{margin:0 0 4px;font-size:19px;color:var(--p)}
+.card p{margin:0;font-size:15px}
+.card.web{background:linear-gradient(135deg,var(--p),#0a5bb8);color:#fff;border-top-color:var(--a)}
+.card.web h3{color:#fff}
+.card.web a{color:var(--a);font-size:14px}
+.calendar{max-width:1200px;margin:0 auto;background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.12);min-height:300px}
+.notice{max-width:560px;margin:50px auto;background:#fff;padding:40px 25px;border-radius:15px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.15);border-top:5px solid var(--a)}
+.notice h2{color:var(--p)}
+.maintenance-message{display:none;margin-top:30px;font-size:22px;font-weight:bold;color:#d32f2f;animation:blink 1.4s linear infinite,pulse 2s ease-in-out infinite}
+.floating{position:fixed;right:15px;bottom:15px;display:flex;flex-direction:column;gap:10px;z-index:999}
+.floating a{background:var(--p);color:#fff;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;box-shadow:0 2px 6px rgba(0,0,0,.3);transition:.3s}
+.floating a:hover{background:var(--a);color:var(--p);transform:scale(1.15)}
+#up{opacity:0;pointer-events:none}
+#up.show{opacity:1;pointer-events:auto}
+.footer{margin-top:auto;background:var(--p);color:#fff;text-align:center;padding:40px 20px 0;overflow:hidden;border-top:5px solid var(--a)}
+.footer p{margin:8px 0;font-size:15px}
+.footer a{color:var(--a);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.f-links{margin:18px 0}
+.f-links a{margin:0 12px}
+.f-div{height:1px;background:rgba(255,255,255,.25);width:80%;margin:18px auto}
+.credit .dev{color:var(--p);background:var(--a);padding:3px 14px;border-radius:20px;font-weight:bold;display:inline-block;transition:.3s;animation:glow 2.5s infinite}
+.footer .credit .dev{color:var(--p)}
+.credit .dev:hover{transform:scale(1.08);text-decoration:none}
+.heart{color:#ff5c6c;display:inline-block;animation:beat 1.2s infinite}
+.marquee-container{overflow:hidden;background:rgba(255,255,255,.1);margin:25px -20px 0;padding:10px 0}
+.marquee{display:inline-block;white-space:nowrap;padding-left:100%;animation:marq 22s linear infinite;font-size:14px}
+@media(min-width:768px){
+.title-bar h1{font-size:24px}.title-bar img{height:52px}
+.long{display:inline}.short{display:none}
+.section,.team{padding:70px 40px}
+.contact-section{flex-direction:row;justify-content:space-between;padding:60px}
+.contact-details{text-align:left;flex:1}
+.contact-section iframe{width:55%;height:380px}
+}
+@keyframes down{from{transform:translateY(-100%)}to{transform:none}}
+@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:.4}to{opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes grow{from{width:0}to{width:60%}}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 rgba(255,221,51,0)}50%{box-shadow:0 0 16px rgba(255,221,51,.9)}}
+@keyframes marq{to{transform:translateX(-100%)}}
+@keyframes blink{50%{opacity:.35}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
 </head>
-<body>
-    
-    <div class="title-bar">
-        <span class="menu-btn" onclick="openNav()">&#9776;</span>
-        <img src="https://raw.githubusercontent.com/YugTroniX-Robotics/Yugfiles/main/IIWO.png?token=GHSAT0AAAAAACXEEHKB7RYAQBQFVJ352LS4ZW4EH7A" alt="IIPE Logo"> 
-        <h1>IIPE JNTUK Student Chapter</h1>
-        <img src="https://raw.githubusercontent.com/YugTroniX-Robotics/Yugfiles/main/Jntuk-logo.png" alt="JNTUK Logo">
-    </div>
+<body id="top">
+<div class="hero small"><h2>About Us</h2><p>Innovation, practical learning and leadership in production engineering.</p></div>
 
-    <div id="myNav" class="nav-menu">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="index.html">Home</a>
-        <a href="about-us.html">About Us</a>
-        <a href="event-schedule.html">Event Schedule</a>
-    </div>
+<div class="section">
+<h2>Who We Are</h2>
+<p>The IIPE JNTUK Student Chapter is a student-run organization that brings together engineering students with a passion for production and mechanical engineering. Operating under the Department of Mechanical Engineering at the University College of Engineering, Kakinada (A), we are committed to fostering innovation, practical learning, and leadership skills among students.</p>
+<p>Our chapter is part of the <a href="https://www.iipeonline.org/" target="_blank" rel="noopener">Indian Institute of Production Engineers</a>, a national professional body that promotes the advancement of production engineering and related disciplines. Through this affiliation, we create a platform for knowledge sharing, skill enhancement, and industry interaction.</p>
+</div>
 
-    <div class="about-us-section">
-        <h2 class="animate__animated animate__fadeInUp">About Us</h2>
-        <p>The IIPE JNTUK Student Chapter is a prestigious student-run organization established to bring together engineering students with a passion for production and mechanical engineering. Operating under the Department of Mechanical Engineering at the University College of Engineering, Kakinada (A), we are committed to fostering innovation, practical learning, and leadership skills among students.</p>
-        <p>Our chapter is part of the larger Indian Institute of Production Engineers, a national professional body that promotes the advancement of production engineering and related disciplines. Through this affiliation, we strive to create a platform for knowledge sharing, skill enhancement, and industry interaction.</p>
-    </div>
+<div class="mv">
+<div>
+<h2>Our Mission</h2>
+<ul>
+<li>To provide opportunities for students to gain exposure to the latest trends and technologies in production and mechanical engineering.</li>
+<li>To bridge the gap between theoretical knowledge and practical application through workshops, industrial visits, guest lectures, and hands-on projects.</li>
+<li>To foster a collaborative environment where students can network with industry professionals, alumni, and experts, preparing them for a successful career.</li>
+</ul>
+</div>
+<div>
+<h2>Our Vision</h2>
+<ul>
+<li>To become a leading student chapter that consistently promotes excellence in the field of production engineering.</li>
+<li>To empower students with the tools, knowledge, and opportunities needed to become innovators and leaders in their fields.</li>
+</ul>
+</div>
+</div>
 
-    <div class="mission-vision-container">
-        <div class="mission-vision-box animate__animated animate__fadeInUp">
-            <h2>Our Mission</h2>
-            <p>To provide opportunities for students to gain exposure to the latest trends and technologies in production and mechanical engineering.<br>
-            To bridge the gap between theoretical knowledge and practical application through workshops, industrial visits, guest lectures, and hands-on projects.<br>
-            To foster a collaborative environment where students can network with industry professionals, alumni, and experts, thus preparing them for a successful career.</p>
-        </div>
-        <div class="mission-vision-box animate__animated animate__fadeInUp">
-            <h2>Our Vision</h2>
-            <p>To become a leading student chapter that consistently promotes excellence in the field of production engineering.<br>
-            To empower students by providing them with the tools, knowledge, and opportunities needed to become innovators and leaders in their respective fields.</p>
-        </div>
-    </div>
+<div class="team dark">
+<div class="section" style="padding:0"><h2>Our Team</h2></div>
+<div class="grid">
+<div class="card"><h3>Mr. K. Sai Nikhil</h3><p>President, IV B.Tech</p></div>
+<div class="card"><h3>Ms. K. Lohitha</h3><p>Vice President, IV B.Tech</p></div>
+<div class="card"><h3>Mr. V. Lalith Nandhan</h3><p>Secretary, III B.Tech</p></div>
+<div class="card"><h3>Ms. M. Indumathi</h3><p>Joint Secretary, III B.Tech</p></div>
+<div class="card"><h3>Mr. G. Teja</h3><p>Treasurer, II B.Tech</p></div>
+<div class="card"><h3>Mr. P. Abhishek John</h3><p>Additional Secretary, IV B.Tech</p></div>
+</div>
+</div>
 
-    <div class="team-section">
-        <h2 class="animate__animated animate__fadeInUp">Our Team</h2>
+<div class="team">
+<div class="section" style="padding:0"><h2>Coordinators</h2></div>
+<div class="grid">
+<div class="card"><h3>Ms. R. Greeshma</h3><p>Event Coordinator, II B.Tech</p></div>
+<div class="card"><h3>Mr. K. Chandu Kumar</h3><p>Industrial Tour &amp; PR Coordinator, IV B.Tech</p></div>
+<div class="card"><h3>Mr. U. Viswanath</h3><p>Student Coordinator, IV B.Tech</p></div>
+<div class="card"><h3>Ms. Md. Samreen Fahima</h3><p>Student Coordinator, IV B.Tech</p></div>
+<div class="card"><h3>Mr. Ch. Chakravarthi</h3><p>Student Coordinator, III B.Tech</p></div>
+<div class="card"><h3>Ms. D. Krishna Sri Bhanu</h3><p>Student Coordinator, III B.Tech</p></div>
+<div class="card"><h3>Mr. Sk. Sameer Ahmed</h3><p>Student Coordinator, II B.Tech</p></div>
+<div class="card"><h3>Ms. P. Navya Sri</h3><p>Student Coordinator, II B.Tech</p></div>
+<div class="card"><h3>Mr. P. Hari</h3><p>Student Coordinator, I B.Tech</p></div>
+<div class="card"><h3>Ms. J. Latha Sri</h3><p>Student Coordinator, I B.Tech</p></div>
+</div>
+</div>
 
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Mr. K. Sai Nikhil</h3>
-            <p>President, IV B.Tech</p>
-        </div>
+<div class="team dark">
+<div class="section" style="padding:0"><h2>Web Team</h2><p class="sub">The students who designed, built and maintain this website in 2026.</p></div>
+<div class="grid">
+<div class="card web"><h3>Mr. S. V. N. S. Surya</h3><p>Website &amp; Publications Coordinator, IV B.Tech</p></div>
+<div class="card web"><h3>Mr. V. Leela Krishna</h3><p>Website &amp; Publications Coordinator, II B.Tech</p><a href="https://leelakrishnavemulapalli.vercel.app/" target="_blank" rel="noopener">View portfolio</a></div>
+<div class="card web"><h3>Mr. K. Ani Babu</h3><p>Website &amp; Publications Coordinator, I B.Tech</p></div>
+</div>
+</div>
 
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Ms. K. Lohitha</h3>
-            <p>Vice President, IV B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Mr. V. Lalith Nandhan</h3>
-            <p>Secretary, III B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Ms. M. Indumathi</h3>
-            <p>Joint Secretary, III B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Mr. G. Teja</h3>
-            <p>Treasurer, II B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Mr. P. Abhishek John</h3>
-            <p>Additional Secretary, IV B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Mr. S. V. N. S. Surya</h3>
-            <p>Website & Publications Coordinator, IV B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Mr. V. Leela Krishna</h3>
-            <p>Website & Publications Coordinator, II B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Mr. K. Ani Babu</h3>
-            <p>Website & Publications Coordinator, I B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Ms. R. Greeshma</h3>
-            <p>Event Coordinator, II B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Mr. K. Chandu Kumar</h3>
-            <p>Industrial Tour & PR Coordinator, IV B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Mr. U. Viswanath</h3>
-            <p>Student Coordinator, IV B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Ms. Md. Samreen Fahima</h3>
-            <p>Student Coordinator, IV B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Mr. Ch. Chakravarthi</h3>
-            <p>Student Coordinator, III B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Ms. D. Krishna Sri Bhanu</h3>
-            <p>Student Coordinator, III B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Mr. Sk. Sameer Ahmed</h3>
-            <p>Student Coordinator, II B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Ms. P. Navya Sri</h3>
-            <p>Student Coordinator, II B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Mr. P. Hari</h3>
-            <p>Student Coordinator, I B.Tech</p>
-        </div>
-
-        <div class="team-member animate__animated animate__fadeInUp">
-            <h3>Ms. J. Latha Sri</h3>
-            <p>Student Coordinator, I B.Tech</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <button class="button animate__animated animate__pulse" onclick="window.location.href='index.html'">Back to Home</button>
-    </div>
-
-    <div class="footer">
-        <p>Copyright &copy; 2024 IIPE UCEK Student Chapter</p>
-        <p>Website designed and developed by <a href="https://leelakrishnavemulapalli.vercel.app/" target="_blank">Vemulapalli Leela Krishna</a>.</p>
-    </div>
-
-    <script>
-        function openNav() {
-            document.getElementById("myNav").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("myNav").style.width = "0";
-        }
-    </script>
+<div class="section">
+<a class="button" href="index.html">Back to Home</a>
+</div>
+<script>
+(function(){
+var d=document,page=location.pathname.split('/').pop()||'index.html';
+var links=[['index.html','Home'],['about-us.html','About Us'],['event-schedule.html','Event Schedule'],['reg.html','Register']];
+var nav=links.map(function(l){return '<a href="'+l[0]+'"'+(l[0]==page?' class="on"':'')+'>'+l[1]+'</a>'}).join('')+'<a href="https://www.iipeonline.org/" target="_blank" rel="noopener">IIPE Official Website &#8599;</a>';
+d.body.insertAdjacentHTML('afterbegin','<div id="bar"></div><div class="title-bar"><button class="menu-btn" aria-label="Open menu" onclick="openNav()">&#9776;</button><img src="https://raw.githubusercontent.com/iipe-ucek-web-management/iipe.web/refs/heads/main/1000088484-removebg-preview.png" alt="IIPE Logo"><h1><span class="long">Indian Institute of Production Engineers</span><span class="short">IIPE JNTUK Student Chapter</span></h1><img src="https://raw.githubusercontent.com/YugTroniX-Robotics/Yugfiles/main/Jntuk-logo.png" alt="JNTUK Logo"></div><div id="myNav" class="nav-menu"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>'+nav+'</div>');
+d.body.insertAdjacentHTML('beforeend','<div class="floating"><a href="#top" id="up" title="Scroll to top">&uarr;</a><a href="index.html" title="Home">&#8962;</a></div><div class="footer"><p>&copy; 2026 <a href="https://www.iipeonline.org/" target="_blank" rel="noopener">Indian Institute of Production Engineers</a> - JNTUK Student Chapter. All rights reserved.</p><p>Department of Mechanical Engineering, University College of Engineering Kakinada (A), JNTUK</p><p>Phone: <a href="tel:+918500314609">+91 8500314609</a></p><div class="f-links"><a href="https://www.iipeonline.org/" target="_blank" rel="noopener">IIPE Official</a><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></div><div class="f-div"></div><p>We are committed to enhancing student knowledge and connecting future engineers with industry professionals.</p><p class="credit">Designed &amp; developed by <a class="dev" href="https://leelakrishnavemulapalli.vercel.app/" target="_blank" rel="noopener">Leela Krishna Vemulapalli</a></p><p>Made with <span class="heart">&#10084;</span> for IIPE JNTUK</p><div class="marquee-container"><div class="marquee">Thank you for visiting our website! Stay connected with IIPE JNTUK Student Chapter for upcoming events and activities.</div></div></div>');
+var gear='<svg class="gear GN" viewBox="0 0 200 200" fill="none" stroke="currentColor"><circle cx="100" cy="100" r="80" stroke-width="18" stroke-dasharray="13.96"/><circle cx="100" cy="100" r="70" stroke-width="12"/><circle cx="100" cy="100" r="20" stroke-width="10"/><path d="M100 30v140M30 100h140" stroke-width="8"/></svg>';
+d.querySelectorAll('.hero').forEach(function(h){h.insertAdjacentHTML('afterbegin',gear.replace('GN','g1')+gear.replace('GN','g2')+gear.replace('GN','g3'))});
+d.querySelectorAll('.card i').forEach(function(i){var n=i.nextElementSibling.textContent.replace(/^(Mr|Ms)\.\s*/,'').split(/\s+/);i.textContent=n[0][0]+n[n.length-1][0]});
+var nv=d.getElementById('myNav');
+window.openNav=function(){nv.style.width='250px'};
+window.closeNav=function(){nv.style.width='0'};
+d.addEventListener('keydown',function(e){if(e.key==='Escape')closeNav()});
+d.addEventListener('click',function(e){if(!nv.contains(e.target)&&!e.target.closest('.menu-btn'))closeNav()});
+var up=d.getElementById('up'),bar=d.getElementById('bar');
+window.addEventListener('scroll',function(){var s=d.documentElement,t=s.scrollTop||d.body.scrollTop;up.classList.toggle('show',t>200);bar.style.width=(t/Math.max(1,s.scrollHeight-s.clientHeight)*100)+'%'});
+up.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
+var rv=d.querySelectorAll('.section>h2,.section>p,.section>.button,.grid>*,.mv>div,.club-images>div,.membership,.slideshow-container,.calendar,.contact-details,.notice');
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;el.classList.add('in');setTimeout(function(){el.style.transitionDelay=''},1000);io.unobserve(el)}})},{threshold:.12});
+rv.forEach(function(el,i){el.classList.add('reveal');el.style.transitionDelay=(i%4)*.1+'s';io.observe(el)})}
+var s=d.getElementsByClassName('mySlides'),dt=d.getElementsByClassName('dot'),si=1;
+function show(n){if(!s.length)return;si=n>s.length?1:n<1?s.length:n;for(var i=0;i<s.length;i++){s[i].style.display='none';dt[i]&&dt[i].classList.remove('active')}s[si-1].style.display='block';dt[si-1]&&dt[si-1].classList.add('active')}
+window.plusSlides=function(n){show(si+n)};
+window.currentSlide=function(n){show(n)};
+show(1);
+if(s.length)setInterval(function(){show(si+1)},4500);
+window.showMaintenanceMessage=function(){d.getElementById('maintenanceMessage').style.display='block'};
+})();
+</script>
 </body>
 </html>
